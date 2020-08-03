@@ -1,0 +1,13 @@
+server:
+  port: 9901
+
+spring:
+  application:
+    name: service-gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      server-addr: 47.75.88.208:8848
+      username: nacos
+      password: nacos
