@@ -19,6 +19,13 @@ spring:
             - Path=/app-stock/**
           filters:
             - StripPrefix=1
+        - id: provider
+          uri: lb://user-login
+#          uri: http://localhost:8082
+          predicates:
+            - Path=/app-login/**
+          filters:
+            - StripPrefix=1
 management:
   endpoints:
     web:

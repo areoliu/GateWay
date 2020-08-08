@@ -9,7 +9,7 @@ spring:
         - id: consumer
           uri: lb://dubbo-consumer
           predicates:
-            - Path=/order/**
+            - Path=/app-order/**
           filters:
             - StripPrefix=1
         - id: provider
@@ -17,6 +17,13 @@ spring:
 #          uri: http://localhost:8082
           predicates:
             - Path=/app-stock/**
+          filters:
+            - StripPrefix=1
+        - id: provider
+          uri: lb://user-login
+#          uri: http://localhost:8082
+          predicates:
+            - Path=/app-login/**
           filters:
             - StripPrefix=1
 management:
